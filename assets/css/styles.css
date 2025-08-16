@@ -1,7 +1,7 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Tailwind-inspired CSS Variables */
+/* CSS Variables - Light Theme Only */
 :root {
   /* Primary Colors */
   --primary-50: #eff6ff;
@@ -36,30 +36,8 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 
-  /* Navy Colors for Dark Mode */
-  --navy-600: #1e3a8a;
-  --navy-700: #1d4ed8;
-  --navy-800: #1e40af;
-  --navy-900: #1e3a8a;
-
   /* Off-white */
   --offwhite: #ffffff;
-}
-
-/* Dark mode variables */
-[class~="dark"] {
-  --text-primary: var(--offwhite);
-  --text-secondary: var(--gray-200);
-  --bg-primary: var(--navy-900);
-  --bg-secondary: var(--navy-800);
-}
-
-/* Light mode variables */
-:root {
-  --text-primary: var(--gray-900);
-  --text-secondary: var(--gray-600);
-  --bg-primary: var(--offwhite);
-  --bg-secondary: var(--gray-50);
 }
 
 /* Base Styles */
@@ -85,10 +63,6 @@ body {
 .text-gray-900 { color: var(--gray-900); }
 .bg-offwhite { background-color: var(--offwhite); }
 .min-h-screen { min-height: 100vh; }
-
-/* Dark mode utilities */
-.dark .text-offwhite { color: var(--offwhite); }
-.dark .bg-navy-900 { background-color: var(--navy-900); }
 
 /* Component Classes */
 .btn-primary {
@@ -141,16 +115,6 @@ body {
   transform: scale(0.95);
 }
 
-.dark .btn-secondary {
-  background-color: var(--navy-800);
-  color: var(--primary-400);
-  border-color: var(--primary-400);
-}
-
-.dark .btn-secondary:hover {
-  background-color: var(--navy-700);
-}
-
 .feature-card {
   background-color: var(--offwhite);
   padding: 2rem;
@@ -163,11 +127,6 @@ body {
 .feature-card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.dark .feature-card {
-  background-color: var(--navy-800);
-  border-color: var(--navy-600);
 }
 
 .section-padding {
@@ -193,11 +152,6 @@ body {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--gray-200);
-}
-
-.dark .header-blur {
-  background-color: rgba(30, 58, 138, 0.8);
-  border-bottom-color: var(--navy-700);
 }
 
 .container-max {
@@ -228,25 +182,14 @@ body {
   color: var(--primary-500);
 }
 
-.dark .link-primary {
-  color: var(--gray-300);
-}
-
-.dark .link-primary:hover {
-  color: var(--primary-400);
-}
-
 .footer-dark {
   background-color: var(--gray-900);
   color: var(--offwhite);
 }
 
-.dark .footer-dark {
-  background-color: var(--navy-900);
-}
-
 /* Footer specific text colors */
-.footer-dark .text-gray-400 {
+.footer-dark .text-gray-400,
+.footer-dark ul li a {
   color: #9ca3af !important;
 }
 
@@ -279,10 +222,6 @@ body {
   }
 }
 
-.dark .heading-hero {
-  color: var(--offwhite);
-}
-
 .heading-section {
   font-size: 1.875rem;
   font-weight: 700;
@@ -295,17 +234,9 @@ body {
   }
 }
 
-.dark .heading-section {
-  color: var(--offwhite);
-}
-
 .text-subtitle {
   font-size: 1.25rem;
   color: var(--gray-600);
-}
-
-.dark .text-subtitle {
-  color: var(--gray-200);
 }
 
 .spacing-nav {
@@ -542,38 +473,6 @@ body {
   transition-duration: 0.2s;
 }
 
-.focus\:outline-none:focus {
-  outline: none;
-}
-
-.focus\:ring-2:focus {
-  box-shadow: 0 0 0 2px var(--primary-500);
-}
-
-.focus\:ring-offset-2:focus {
-  box-shadow: 0 0 0 2px var(--offwhite), 0 0 0 4px var(--primary-500);
-}
-
-.dark .focus\:ring-offset-gray-900:focus {
-  box-shadow: 0 0 0 2px var(--gray-900), 0 0 0 4px var(--primary-500);
-}
-
-.hover\:bg-gray-200:hover {
-  background-color: var(--gray-200);
-}
-
-.hover\:bg-gray-50:hover {
-  background-color: var(--gray-50);
-}
-
-.dark .bg-gray-800 {
-  background-color: var(--gray-800);
-}
-
-.dark .hover\:bg-gray-700:hover {
-  background-color: var(--gray-700);
-}
-
 .text-gray-600 {
   color: var(--gray-600);
 }
@@ -584,24 +483,6 @@ body {
 
 .text-gray-500 {
   color: var(--gray-500);
-}
-
-/* Override for footer context */
-.footer-dark .text-gray-400,
-.footer-dark ul li a {
-  color: #9ca3af !important;
-}
-
-.footer-dark .text-gray-500 {
-  color: #6b7280 !important;
-}
-
-.dark .text-gray-300 {
-  color: var(--gray-300);
-}
-
-.dark .text-gray-200 {
-  color: var(--gray-200);
 }
 
 .hover\:text-white:hover {
@@ -621,67 +502,6 @@ body {
   background-image: linear-gradient(to bottom right, var(--gray-50), var(--primary-50));
 }
 
-.dark .bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, var(--navy-900), var(--navy-800));
-}
-
-/* Colored gradient backgrounds for screenshots */
-.from-blue-50 {
-  --gradient-from: #eff6ff;
-}
-
-.to-indigo-100 {
-  --gradient-to: #e0e7ff;
-}
-
-.from-green-50 {
-  --gradient-from: #f0fdf4;
-}
-
-.to-emerald-100 {
-  --gradient-to: #dcfce7;
-}
-
-.from-orange-50 {
-  --gradient-from: #fff7ed;
-}
-
-.to-red-100 {
-  --gradient-to: #fee2e2;
-}
-
-.from-purple-50 {
-  --gradient-from: #faf5ff;
-}
-
-.to-pink-100 {
-  --gradient-to: #fce7f3;
-}
-
-.bg-gradient-to-br.from-blue-50.to-indigo-100 {
-  background-image: linear-gradient(to bottom right, var(--gradient-from), var(--gradient-to));
-}
-
-.bg-gradient-to-br.from-green-50.to-emerald-100 {
-  background-image: linear-gradient(to bottom right, var(--gradient-from), var(--gradient-to));
-}
-
-.bg-gradient-to-br.from-orange-50.to-red-100 {
-  background-image: linear-gradient(to bottom right, var(--gradient-from), var(--gradient-to));
-}
-
-.bg-gradient-to-br.from-purple-50.to-pink-100 {
-  background-image: linear-gradient(to bottom right, var(--gradient-from), var(--gradient-to));
-}
-
-/* Dark mode overrides for colored gradients */
-.dark .bg-gradient-to-br.from-blue-50.to-indigo-100,
-.dark .bg-gradient-to-br.from-green-50.to-emerald-100,
-.dark .bg-gradient-to-br.from-orange-50.to-red-100,
-.dark .bg-gradient-to-br.from-purple-50.to-pink-100 {
-  background-image: linear-gradient(to bottom right, var(--navy-800), var(--navy-700));
-}
-
 .text-transparent {
   color: transparent;
 }
@@ -693,10 +513,6 @@ body {
 
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--primary-400), var(--secondary-300));
-}
-
-.dark .bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--primary-300), var(--secondary-200));
 }
 
 /* Animation */
@@ -749,12 +565,6 @@ body {
   }
 }
 
-/* Theme toggle specific styles */
-#theme-toggle {
-  border: none;
-  cursor: pointer;
-}
-
 /* Image styles */
 img {
   max-width: 100%;
@@ -768,12 +578,4 @@ img {
 /* Background colors for sections */
 .bg-gray-50 {
   background-color: var(--gray-50);
-}
-
-.dark .bg-navy-800 {
-  background-color: var(--navy-800);
-}
-
-.dark .bg-navy-900 {
-  background-color: var(--navy-900);
 }
